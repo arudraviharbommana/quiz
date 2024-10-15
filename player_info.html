@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Player Info</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>Enter Your Details</h1>
+      <p>Please provide your name and email to start the quiz.</p>
+    </div>
+
+    <form id="playerForm" onsubmit="savePlayerInfo(event)">
+      <input type="text" id="playerName" placeholder="Enter your name" required>
+      <input type="email" id="playerEmail" placeholder="Enter your email" required>
+      <button type="submit" class="start-btn">Start Quiz</button>
+    </form>
+
+    <button class="start-btn" onclick="goBack()">Go Back</button>
+
+    <div class="footer">
+      <p>All Rights Reserved</p>
+    </div>
+  </div>
+
+  <script>
+    function savePlayerInfo(event) {
+      event.preventDefault(); // Prevent page refresh
+
+      const name = document.getElementById('playerName').value;
+      const email = document.getElementById('playerEmail').value;
+
+      // Save player info in localStorage
+      localStorage.setItem('playerName', name);
+      localStorage.setItem('playerEmail', email);
+
+      // Redirect to the loading page
+      window.location.href = "loading.html";
+    }
+
+    function goBack() {
+      window.location.href = "opening.html";
+    }
+  </script>
+</body>
+</html>

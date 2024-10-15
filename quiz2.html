@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz - Question 2</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>Question 2</h1>
+      <p>Who is my Favourite Actor?</p>
+    </div>
+
+    <form id="quizForm" onsubmit="handleSubmit(event)">
+      <div class="option">
+        <label for="Dhanush">1. Dhanush</label>
+        <input type="radio" id="Dhanush" name="answer" value="Dhanush" required>
+      </div>
+      <div class="option">
+        <label for="AlluArjun">2. Allu Arjun</label>
+        <input type="radio" id="AlluArjun" name="answer" value="Allu Arjun">
+      </div>
+      <div class="option">
+        <label for="Chiranjeevi">3. Chiranjeevi</label>
+        <input type="radio" id="Chiranjeevi" name="answer" value="Chiranjeevi">
+      </div>
+      <div class="option">
+        <label for="Rajinikanth">4. Rajinikanth</label>
+        <input type="radio" id="Rajinikanth" name="answer" value="Rajinikanth">
+      </div>
+      <button type="submit" class="start-btn">Submit</button>
+    </form>
+
+    <div class="footer">
+      <p>All Rights Reserved</p>
+    </div>
+  </div>
+
+  <script>
+    let score = localStorage.getItem('score') ? parseInt(localStorage.getItem('score')) : 0;
+
+    function handleSubmit(event) {
+      event.preventDefault(); // Prevent page reload
+
+      const selectedAnswer = document.querySelector('input[name="answer"]:checked');
+
+      if (selectedAnswer) {
+        // Check if the selected answer is correct
+        if (selectedAnswer.value === "Rajinikanth") {
+          score++; // Increment score for the correct answer
+        }
+        localStorage.setItem('score', score); // Save score to local storage
+        window.location.href = "quiz3.html"; 
+      } else {
+        alert("Please select an answer to proceed.");
+      }
+    }
+  </script>
+</body>
+</html>
+

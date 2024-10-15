@@ -1,0 +1,63 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz - Question 4</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>Question 4</h1>
+      <p>What is my favourite dish?</p>
+    </div>
+
+    <form id="quizForm" onsubmit="handleSubmit(event)">
+      <div class="option">
+        <label for="Biryani">1. Biryani</label>
+        <input type="radio" id="Biryani" name="answer" value="Biryani" required>
+      </div>
+      <div class="option">
+        <label for="DalAndPickle">2. Dal and Pickle</label>
+        <input type="radio" id="Dal And Pickle" name="answer" value="Dal and Pickle">
+      </div>
+      <div class="option">
+        <label for="Ravva Dosa">3. Ravva Dosa</label>
+        <input type="radio" id="Ravva Dosa" name="answer" value="Ravva Dosa">
+      </div>
+      <div class="option">
+        <label for="Pani Puri">4. Pani Puri</label>
+        <input type="radio" id="Pani Puri" name="answer" value="Pani Puri">
+      </div>
+      <button type="submit" class="start-btn">Submit</button>
+    </form>
+
+    <div class="footer">
+      <p>All Rights Reserved</p>
+    </div>
+  </div>
+
+  <script>
+    let score = localStorage.getItem('score') ? parseInt(localStorage.getItem('score')) : 0;
+
+    function handleSubmit(event) {
+      event.preventDefault(); // Prevent page reload
+
+      const selectedAnswer = document.querySelector('input[name="answer"]:checked');
+
+      if (selectedAnswer) {
+        // Check if the selected answer is correct
+        if (selectedAnswer.value === "Ravva Dosa") {
+          score++; // Increment score for the correct answer
+        }
+        localStorage.setItem('score', score); // Save score to local storage
+        window.location.href = "quiz5.html"; 
+      } else {
+        alert("Please select an answer to proceed.");
+      }
+    }
+  </script>
+</body>
+</html>

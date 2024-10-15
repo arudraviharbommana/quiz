@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Loading...</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>Get Set Go...</h1>
+    </div>
+
+    <div class="progress-bar">
+      <div class="progress"></div>
+    </div>
+
+    <div class="footer">
+      <p>All Rights Reserved</p>
+    </div>
+  </div>
+
+  <script>
+    // Animate the progress bar and redirect after 2 seconds
+    window.onload = () => {
+      const progress = document.querySelector('.progress');
+      progress.style.width = '100%'; // Fill the bar
+      
+      setTimeout(() => {
+        window.location.href = "quiz1.html"; // Redirect to the quiz page
+      }, 2000); // 2-second delay
+    };
+  </script>
+</body>
+</html>
