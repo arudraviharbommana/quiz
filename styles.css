@@ -1,72 +1,106 @@
-/* Ensure the entire content is centered on the page */
+
+/* General Reset */
 body, html {
   margin: 0;
   padding: 0;
-  height: 100%;
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #f5f5f5;
-  font-family: Arial, sans-serif;
+  min-height: 100vh;
 }
 
-/* Container for the content */
+/* Container Styles */
 .container {
-  width: 80%;
-  max-width: 600px;
-  text-align: center;
-  background-color: white;
-  padding: 20px;
+  width: 90%;
+  max-width: 500px;
+  background: #ffffff;
   border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-/* Leaderboard Table Styles */
-.leaderboard-table {
-  width: 100%;
-  margin-top: 20px;
-  border-collapse: collapse;
-}
-
-/* Table Headers */
-.leaderboard-table th {
-  background-color: #4CAF50;
-  color: white;
-  padding: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
   text-align: center;
 }
 
-/* Table Rows */
-.leaderboard-table td {
+/* Header Styles */
+.header h1 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.header p {
+  font-size: 18px;
+  margin-bottom: 20px;
+  color: #555;
+}
+
+/* Form and Option Styles */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  background: #f9f9f9;
   padding: 10px;
-  text-align: center;
-  border-bottom: 1px solid #ddd;
+  border-radius: 5px;
+  border: 1px solid #ddd;
 }
 
-/* Alternating Row Color */
-.leaderboard-table tr:nth-child(even) {
-  background-color: #f2f2f2;
+.option input[type="radio"] {
+  margin-right: 10px;
 }
 
-/* Button Style */
+.option label {
+  font-size: 16px;
+  color: #333;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* Submit Button */
 .start-btn {
-  margin-top: 20px;
-  padding: 10px 20px;
   background-color: #4CAF50;
   color: white;
   border: none;
+  padding: 10px 15px;
   border-radius: 5px;
-  cursor: pointer;
   font-size: 16px;
+  cursor: pointer;
+  margin-top: 20px;
 }
 
 .start-btn:hover {
   background-color: #45a049;
 }
 
-/* Footer Styles */
+/* Footer */
 .footer {
   margin-top: 15px;
   font-size: 14px;
   color: #555;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .header h1 {
+    font-size: 20px;
+  }
+
+  .header p {
+    font-size: 16px;
+  }
+
+  .option label {
+    font-size: 14px;
+  }
+
+  .start-btn {
+    font-size: 14px;
+    padding: 8px 12px;
+  }
 }
